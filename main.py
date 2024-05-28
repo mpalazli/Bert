@@ -120,7 +120,7 @@ def train_model(model, train_loader, val_loader, device, epochs=3):
             predictions = torch.argmax(logits, dim=-1)
             accuracy = (predictions == batch[2]).cpu().numpy().mean() * 100
             total_eval_accuracy += accuracy
-        print(f"Validation Accuracy: {total_eval_accuracy / len(val_loader)}")
+        print({total_eval_accuracy / len(val_loader)})
 
 def save_model_and_tokenizer(model, tokenizer, output_dir):
     # Eğer çıkış dizini yoksa oluştur
